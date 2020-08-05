@@ -18,7 +18,7 @@ void Start()
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(-3* Input.GetAxis("Mouse Y") , 0, 0);
         if (Input.GetMouseButtonDown(0) && canShoot)
         {
             Instantiate(Bullet, this.transform.position, this.transform.rotation);
