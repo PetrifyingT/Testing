@@ -21,11 +21,11 @@ void Start()
         
         if (Input.GetMouseButtonDown(0) && canShoot)
         {
-            Instantiate(Bullet, this.transform.position, Quaternion.EulerAngles(0, 0, 0));
+            Instantiate(Bullet, this.transform.position, this.transform.rotation);
             canShoot = false;
             timeUntilNextShot = Time.time + timeBetweenShots;
         }
-        if (Time.time > timeUntilNextShot)
+        if (Time.time >= timeUntilNextShot)
         {
             canShoot = true;
         }
