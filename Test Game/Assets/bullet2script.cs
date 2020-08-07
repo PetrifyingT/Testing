@@ -16,7 +16,7 @@ public class bullet2script : MonoBehaviour
     void Update()
     {
         shotTimer += Time.deltaTime;
-        if (shotTimer > 1)
+        if (shotTimer > 2)
         {
             Instantiate(bullet2, this.transform.position, this.transform.rotation);
             shotTimer = 0;

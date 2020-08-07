@@ -7,7 +7,7 @@ public class meowmeow : MonoBehaviour
 
 
     public float speed = 20;
-
+    public GameObject meowcat;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +17,13 @@ public class meowmeow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        transform.Translate(Vector3.right * speed * Time.deltaTime);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
